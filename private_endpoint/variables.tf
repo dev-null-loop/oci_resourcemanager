@@ -22,8 +22,8 @@ variable "display_name" {
 
 variable "dns_zones" {
   description = "(Optional) (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver. "
-  type        = string
-  default     = null
+  type        = list(string)
+  default     = []
 }
 
 variable "freeform_tags" {
@@ -35,7 +35,7 @@ variable "freeform_tags" {
 variable "is_used_with_configuration_source_provider" {
   description = "(Optional) (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "nsg_id_list" {
