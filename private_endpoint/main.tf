@@ -9,9 +9,5 @@ resource "oci_resourcemanager_private_endpoint" "this" {
   freeform_tags                              = var.freeform_tags
   is_used_with_configuration_source_provider = var.is_used_with_configuration_source_provider
   nsg_id_list                                = var.nsg_id_list
-}
-
-data "oci_resourcemanager_private_endpoint_reachable_ip" "this" {
-  private_endpoint_id = oci_resourcemanager_private_endpoint.this.id
-  private_ip          = var.private_ip
+  security_attributes                        = var.security_attributes
 }
